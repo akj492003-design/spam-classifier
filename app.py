@@ -2,31 +2,26 @@ from flask import Flask, request, render_template
 import pickle
 import nltk
 import string
-
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-
 app = Flask(__name__)
 
-
-# Load the trained model and TF-IDF vectorizer
+# Load trained model and TF-IDF vectorizer
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
-
-# Porter Stemmer
 ps = PorterStemmer()
 
 
 def transform_text(text):
-    # Lowercase
+    # Convert text to lowercase
     text = text.lower()
 
-    # Tokenization
+    # Tokenize text
     text = nltk.word_tokenize(text)
 
-    # Keep only alphanumeric words
+    # Keep only alphanumeric tokens
     y = []
     for i in text:
         if i.isalnum():
@@ -43,11 +38,10 @@ def transform_text(text):
     text = y[:]
     y.clear()
 
-    # Stemming
+    # Apply stemming
     for i in text:
         y.append(ps.stem(i))
 
-    # Convert list back to string
     return " ".join(y)
 
 
@@ -58,18 +52,20 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-
     message = request.form.get('message')
 
+    # Transform the user's SMS
     transformed_message = transform_text(message)
 
-    # Convert text into TF-IDF vector
-    vector_input = tfidf.transform([transformed_message])
+    # Convert TF-IDF sparse matrix to dense array
+    # Required because the SVC inside the VotingClassifier
+    # was trained using dense input.
+    vector_input = tfidf.transform([transformed_message]).toarray()
 
-    # Predict
+    # Make prediction
     prediction = model.predict(vector_input)[0]
 
-    # Convert prediction to readable result
+    # Convert model output to readable text
     result = "Spam" if prediction == 1 else "Not Spam"
 
     return render_template(
