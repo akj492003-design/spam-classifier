@@ -1,0 +1,724 @@
+/* ================================
+   GLOBAL RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #e7e7e7;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(255, 92, 0, 0.08),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #090b0d 0%,
+            #111416 45%,
+            #0a0c0e 100%
+        );
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+nav {
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 2.5%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #25282b,
+            #141618
+        );
+
+    border-bottom: 1px solid rgba(255, 92, 0, 0.45);
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ================================
+   PROFESSIONAL NAVBAR TITLE
+================================ */
+
+.nav-logo {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #f1f1f1;
+
+    letter-spacing: 0.8px;
+
+    margin-right: auto;
+
+    white-space: nowrap;
+
+    padding-left: 16px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Main orange accent */
+
+.nav-logo::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 4px;
+    height: 28px;
+
+    transform: translateY(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ff8a42,
+            #ff5c00
+        );
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 0 8px rgba(255, 106, 26, 0.35);
+}
+
+
+/* Small orange line under title */
+
+.nav-logo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 16px;
+    bottom: -5px;
+
+    width: 46px;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff6a1a,
+            rgba(255, 106, 26, 0)
+        );
+
+    border-radius: 2px;
+}
+
+
+/* ================================
+   NAVIGATION LINKS
+================================ */
+
+.nav-link {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.nav-link a {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 38px;
+
+    padding: 0 18px;
+
+    color: #ff9a5c;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    background:
+        rgba(255, 106, 26, 0.10);
+
+    border:
+        1px solid rgba(255, 106, 26, 0.35);
+
+    border-radius: 5px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-link a:hover {
+    color: #ffb07a;
+
+    background:
+        rgba(255, 106, 26, 0.20);
+
+    border-color:
+        rgba(255, 106, 26, 0.60);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ================================
+   HERO / BANNER
+================================ */
+
+.hero {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 18px 3% 24px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(55, 12, 4, 0.40),
+            rgba(255, 82, 0, 0.12),
+            rgba(55, 12, 4, 0.40)
+        );
+
+    border-bottom:
+        1px solid rgba(255, 92, 0, 0.18);
+}
+
+.hero img {
+    display: block;
+
+    width: min(1100px, 90vw);
+
+    height: auto;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    border:
+        1px solid rgba(255, 103, 35, 0.32);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.55);
+
+    opacity: 0.96;
+}
+
+
+/* ================================
+   CLASSIFIER CARD
+================================ */
+
+.classifier {
+    width: min(1100px, 90%);
+
+    margin: 45px auto 70px;
+
+    padding: 32px 38px 38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(38, 41, 43, 0.96),
+            rgba(24, 27, 29, 0.97)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-top:
+        3px solid rgba(255, 92, 0, 0.55);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ================================
+   CLASSIFIER HEADING
+================================ */
+
+.classifier h2 {
+    font-size: 32px;
+
+    margin-bottom: 14px;
+
+    color: #eeeeee;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+.classifier h2::after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 92, 0, 0.18),
+            transparent
+        );
+}
+
+
+/* Description */
+
+.classifier p {
+    margin-bottom: 22px;
+
+    color: #b9b9b9;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   TEXTAREA
+================================ */
+
+.classifier textarea {
+    width: 100%;
+
+    min-height: 270px;
+
+    resize: vertical;
+
+    display: block;
+
+    padding: 20px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #dddddd;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 21, 23, 0.92),
+            rgba(27, 30, 32, 0.88)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 7px;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 2px 8px rgba(0, 0, 0, 0.35);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.classifier textarea::placeholder {
+    color: #858585;
+
+    opacity: 1;
+}
+
+.classifier textarea:focus {
+    border-color:
+        rgba(255, 106, 26, 0.60);
+
+    background:
+        rgba(20, 23, 25, 0.96);
+
+    box-shadow:
+        0 0 0 2px rgba(255, 92, 0, 0.08),
+        inset 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ================================
+   CHECK MESSAGE BUTTON
+================================ */
+
+.classifier button {
+    margin-top: 22px;
+
+    min-width: 190px;
+
+    padding: 13px 28px;
+
+    border:
+        1px solid rgba(255, 106, 26, 0.65);
+
+    border-radius: 5px;
+
+    background:
+        rgba(255, 106, 26, 0.16);
+
+    color: #ff9a5c;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.30);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.classifier button:hover {
+    background:
+        rgba(255, 106, 26, 0.28);
+
+    color: #ffb07a;
+
+    border-color:
+        rgba(255, 126, 60, 0.85);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.40);
+}
+
+.classifier button:active {
+    background:
+        rgba(255, 106, 26, 0.22);
+
+    transform:
+        translateY(0);
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ================================
+   PREDICTION RESULT
+================================ */
+
+.result {
+    margin-top: 24px;
+
+    padding: 16px 20px;
+
+    border-radius: 6px;
+
+    background:
+        rgba(255, 92, 0, 0.08);
+
+    border:
+        1px solid rgba(255, 92, 0, 0.30);
+
+    color: #f1f1f1;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    width: 100%;
+
+    padding: 18px 2.5%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #17191b,
+            #0c0e10
+        );
+
+    border-top:
+        1px solid rgba(255, 92, 0, 0.40);
+
+    color: #8e8e8e;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+footer a {
+    color: #c86b36;
+
+    text-decoration: none;
+
+    margin-left: 4px;
+
+    transition:
+        color 0.2s ease;
+}
+
+footer a:hover {
+    color: #ff8a42;
+
+    text-decoration: underline;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 800px) {
+
+    nav {
+        height: auto;
+
+        min-height: 58px;
+
+        padding: 10px 20px;
+    }
+
+    .nav-logo {
+        font-size: 20px;
+    }
+
+    .nav-logo::before {
+        top: 50%;
+
+        width: 3px;
+
+        height: 24px;
+    }
+
+    .nav-logo::after {
+        left: 16px;
+
+        width: 40px;
+    }
+
+    .nav-link a {
+        padding: 0 12px;
+
+        font-size: 15px;
+    }
+
+
+    /* Banner */
+
+    .hero {
+        padding: 15px 2% 22px;
+    }
+
+    .hero img {
+        width: 94vw;
+
+        max-height: 260px;
+    }
+
+
+    /* Classifier */
+
+    .classifier {
+        width: 94%;
+
+        margin-top: 30px;
+
+        padding: 25px 22px 30px;
+    }
+
+    .classifier h2 {
+        font-size: 27px;
+    }
+
+    .classifier p {
+        font-size: 16px;
+    }
+
+    .classifier textarea {
+        min-height: 230px;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 520px) {
+
+    nav {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 10px 15px;
+    }
+
+    .nav-logo {
+        margin-right: 0;
+
+        margin-bottom: 10px;
+
+        justify-content: center;
+
+        padding-left: 0;
+    }
+
+
+    /* Keep title accent, but move it slightly left */
+
+    .nav-logo::before {
+        left: calc(50% - 82px);
+
+        top: 50%;
+
+        width: 3px;
+
+        height: 23px;
+    }
+
+    .nav-logo::after {
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 42px;
+    }
+
+
+    /* Navigation */
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    .nav-link a {
+        height: 40px;
+
+        padding: 0 15px;
+    }
+
+
+    /* Banner */
+
+    .hero {
+        padding: 12px 1% 18px;
+    }
+
+    .hero img {
+        width: 96vw;
+
+        max-height: 210px;
+    }
+
+
+    /* Classifier */
+
+    .classifier {
+        width: 94%;
+
+        padding: 22px 17px 25px;
+    }
+
+    .classifier h2 {
+        font-size: 24px;
+    }
+
+    .classifier p {
+        font-size: 15px;
+    }
+
+    .classifier textarea {
+        min-height: 210px;
+
+        padding: 15px;
+    }
+
+
+    /* Button */
+
+    .classifier button {
+        width: 100%;
+    }
+
+
+    /* Footer */
+
+    footer {
+        font-size: 12px;
+    }
+}

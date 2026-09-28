@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SMS Spam Classifier</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="nav-logo">
+            Spam Classifier
+        </div>
+
+        <div class="nav-link">
+
+            <a href="/">Home</a>
+
+            <a href="#classifier">Classifier</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Spam Classifier Illustration -->
+
+    <section class="hero">
+
+        <img
+            src="{{ url_for('static', filename='spam-logo.png') }}"
+            alt="SMS Spam Classifier">
+
+    </section>
+
+
+    <!-- Classifier -->
+
+    <section class="classifier" id="classifier">
+
+        <h2>Check Your Message</h2>
+
+        <p>
+            Enter an SMS below and our ML model
+            will classify it as spam or not spam.
+        </p>
+
+
+        <form action="/predict" method="POST">
+
+            <textarea
+                name="message"
+                placeholder="Enter your SMS here"
+                required>{{ message if message else '' }}</textarea>
+
+            <button type="submit">
+                Check Message
+            </button>
+
+        </form>
+
+
+        <!-- Prediction Result -->
+
+        {% if prediction %}
+
+            <div class="result">
+
+                Result: {{ prediction }}
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 SMS Spam Classifier. All rights reserved.
+
+        <a href="#">HTML5</a> /
+
+        <a href="#">CSS3</a> /
+
+        <a href="#">Flask</a> /
+
+        <a href="#">Scikit-learn</a> /
+
+        <a href="#">GitHub</a>
+
+    </footer>
+
+
+</body>
+
+</html>
