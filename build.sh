@@ -1,2 +1,2 @@
 pip install -r requirements.txt
-python -c "import nltk; nltk.download('punkt_tab'); nltk.download('stopwords')"
+python -c "import os,nltk; d=os.path.join(os.getcwd(),'nltk_data'); os.makedirs(d,exist_ok=True); nltk.download('punkt_tab',download_dir=d,quiet=True); nltk.download('stopwords',download_dir=d,quiet=True)"
